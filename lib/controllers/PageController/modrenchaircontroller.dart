@@ -49,8 +49,4 @@ class chairController with ChangeNotifier {
     _addpressed = !_addpressed;
     notifyListeners();
   }
-
 }
-
-
-

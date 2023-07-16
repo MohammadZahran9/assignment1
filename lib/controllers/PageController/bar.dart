@@ -1,19 +1,12 @@
 import 'package:flutter/material.dart';
 
-class barmodel with ChangeNotifier{
+class barmodel with ChangeNotifier {
   int _currentIndex = 0;
-
-
 
   int get currentIndex => _currentIndex;
 
-
   void updateIndex(int index) {
-    _currentIndex = index ;
+    _currentIndex = index;
     notifyListeners();
   }
-
-
 }
-
-

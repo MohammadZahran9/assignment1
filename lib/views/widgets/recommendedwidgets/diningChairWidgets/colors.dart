@@ -26,9 +26,7 @@ class colorsOfchair extends StatelessWidget {
           padding: const EdgeInsets.only(left: 10),
           margin: const EdgeInsets.only(right: 5, top: 5),
           child: GestureDetector(
-            onTap: () {
-              
-            },
+            onTap: () {},
             child: Container(
               height: 20,
               width: 20,
