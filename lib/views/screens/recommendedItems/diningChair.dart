@@ -1,9 +1,12 @@
+import 'package:assignment1/controllers/PageController/modrenchaircontroller.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import '../../widgets/recommendedwidgets/diningChairWidgets/addToCart.dart';
 import '../../widgets/recommendedwidgets/diningChairWidgets/colors.dart';
 import '../../widgets/recommendedwidgets/diningChairWidgets/pic.dart';
 import '../../widgets/recommendedwidgets/diningChairWidgets/rates.dart';
 import '../../widgets/recommendedwidgets/diningChairWidgets/removeAndadd.dart';
+import 'package:badges/badges.dart' as badges;
 
 class diningChair extends StatelessWidget {
   const diningChair({super.key});
@@ -23,10 +26,23 @@ class diningChair extends StatelessWidget {
                 color: Colors.grey,
               )),
           actions: [
-            const Icon(
-              Icons.shopping_bag_outlined,
-              color: Colors.grey,
-            ),
+            Consumer<chairController>(builder: (context, value, child) {
+              return Padding(
+                padding: EdgeInsets.only(top: 14),
+                child: badges.Badge(
+                  badgeContent: Text(value.num.toString()),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).pushNamed("Checkout");
+                    },
+                    child: Icon(
+                      Icons.shopping_bag_outlined,
+                      color: Colors.grey,
+                    ),
+                  ),
+                ),
+              );
+            }),
             Padding(
               padding: const EdgeInsets.all(15),
               child: Badge(

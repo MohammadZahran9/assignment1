@@ -5,5 +5,4 @@ class imagesassets {
   static String three = "assets/images/im_3.jpg";
   static String four = "assets/images/im_4.jpg";
   static String five = "assets/images/im_5.jpg";
-
 }
